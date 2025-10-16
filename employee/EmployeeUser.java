@@ -1,7 +1,7 @@
 package employee;
 
 public class EmployeeUser {
-    private static int secondPartOfId = 1000;
+    private static int secondPartOfId = 0;
     private String employeeId;
     private String name;
     private String email;
@@ -61,6 +61,9 @@ public class EmployeeUser {
         secondPartOfId++;
         return "E" + secondPartOfId;
     }
+    // llta2ked ya 4bab di 34an lam a3ml reading mn el file w feh employeeId already
+    // akbar mn el secondPartOfId elly 3andy w kda lama a3ml generate l id gedida hyb2a fe duplicate
+    // 34an kda lazm a3ml update l secondPartOfId 3ala 7asab el employeeId elly ana 3ayzo a3ml object mn el data bta3to
 
     private static void updateNextId(String existingId) {
         //substring(1) 34an a5od el part el rakmi bas w ab2a a3ml convert string l integer
