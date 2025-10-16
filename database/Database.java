@@ -2,7 +2,7 @@ package database;
 import java.io.*;
 import java.util.*;
 
-public abstract class Database<T> { //
+public abstract class Database<T> { // di ya3ny any class hy extend el class di hy specify an type for T (EmployeeUser or Product or CustomerProduct) 3ashan a3ml database 3la ay 7aga
     protected ArrayList<T> records = new ArrayList<>();
     String fileName;
 
