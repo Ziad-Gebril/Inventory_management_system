@@ -27,7 +27,7 @@ public class TestProduct {
             System.out.println(e.lineRepresentation());
         }
 
-        Product newProd =new Product("P5","EarBuds","Huawei","TechSupplier",5,500);
+        Product newProd = new Product("P5","EarBuds","Huawei","TechSupplier",5,500);
         db.insertRecord(newProd);
 
         db.saveToFile();

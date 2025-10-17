@@ -1,7 +1,6 @@
 package employee;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class testCustomer {
     public static void main(String[] args) {

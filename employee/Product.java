@@ -1,6 +1,6 @@
 package employee;
-
-public class Product {
+import database.Record;
+public class Product implements Record {
     private String productID;
     private String productName;
     private String manufacturerName;
@@ -22,8 +22,14 @@ public class Product {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    @Override
     public String lineRepresentation() {
         return productID + "," + productName + "," + manufacturerName + "," + supplierName + "," +  quantity + "," + price;
     }
-    public String getSearchKey(){return productID;}
+
+    @Override
+    public String getSearchKey() {
+        return productID;
+    }
 }

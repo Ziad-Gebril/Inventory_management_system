@@ -2,63 +2,63 @@ package employee;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import database.Record;
 
-public class CustomerProduct {
+public class CustomerProduct implements Record {
 
     private String customerSSN;
     private String productID;
     private LocalDate purchaseDate;
     private Boolean paid;
 
-    public CustomerProduct(String customerSSN , String productID, LocalDate purchaseDate)
-    {
+    public CustomerProduct(String customerSSN, String productID, LocalDate purchaseDate) {
         this.customerSSN = customerSSN;
         this.productID = productID;
         this.purchaseDate = purchaseDate;
         this.paid = false;
     }
 
-//******************************** getters ********************************************** */
+    // ******************************** getters
+    // ********************************************** */
 
-    public String getCustomerSSN()
-    {
+    public String getCustomerSSN() {
         return customerSSN;
     }
-    public String getProductID()
-    {
+
+    public String getProductID() {
         return productID;
     }
-    public LocalDate getPurchaseDate()
-    {
+
+    public LocalDate getPurchaseDate() {
         return purchaseDate;
     }
-    public Boolean isPaid()
-    {
+
+    public Boolean isPaid() {
         return paid;
     }
 
-//********************************************* setters ***************************************** */
+    // ********************************************* setters
+    // ***************************************** */
 
-    public void setPaid(Boolean paid)
-    {
+    public void setPaid(Boolean paid) {
         this.paid = paid;
     }
 
-    public String lineRepresentation()
-    {
+    @Override
+    public String lineRepresentation() {
         String date = getDateFormated();
         return customerSSN + "," + productID + "," + date + "," + paid;
     }
 
-    public String getSearchKey()
-    {
+    @Override
+    public String getSearchKey() {
         return customerSSN;
     }
+    // ************************************************** helper functions
+    // ******************************************* */
 
-//************************************************** helper functions ******************************************* */
-
-    public String getDateFormated(){
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    public String getDateFormated() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String date = getPurchaseDate().format(formatter);
         return date;
     }
