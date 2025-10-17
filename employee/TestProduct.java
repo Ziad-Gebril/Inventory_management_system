@@ -22,6 +22,9 @@ public class TestProduct {
         for (Product e : db.returnAllRecords()) {
             System.out.println(e.lineRepresentation());
         }
+        System.out.println(db.contains("P6"));
+        db.deleteRecord("P5");
+        db.saveToFile();
     }
 
 }

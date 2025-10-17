@@ -2,4 +2,3 @@ P1,Laptop,Apple,TechSupplier,10,1500.0
 P2,Phone,Apple,TechSupplier,10,1000.0
 P3,Laptop,Dell,TechSupplier,15,700.0
 P4,Phone,Samsung,TechSupplier,10,1000.0
-P5,EarBuds,Huawei,TechSupplier,5,500.0

@@ -25,20 +25,4 @@ public class ProductDatabase extends Database<Product>{
     public String getLineRepresentation(Product product) {
         return product.lineRepresentation();
     }
-
-    @Override
-    public ArrayList<Product> returnAllRecords() {
-        return records;
-    }
-
-    @Override
-    public Product getRecord(String key){
-        for(int i = 0; i < records.size(); i++){
-            if(getSearchKey(records.get(i)).equals(key)){
-                return records.get(i);
-            }
-        }
-        return null;
-    }
-
 }
