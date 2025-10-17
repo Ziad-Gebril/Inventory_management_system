@@ -1,9 +1,7 @@
 package employee;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import database.CustomerProductDatabase;
-import employee.CustomerProduct;
 import java.util.ArrayList;
 
 
@@ -13,7 +11,7 @@ public class testCustomer {
         
         ArrayList<CustomerProduct> csproducts;
 
-        CustomerProductDatabase db = new CustomerProductDatabase("E:\\OneDrive\\Desktop\\Programing\\Cursor\\Labs\\Lab4\\inventory\\Inventory_management_system\\database\\CustomerProduct.txt");
+        CustomerProductDatabase db = new CustomerProductDatabase("database/CustomerProduct.txt");
         db.readFromFile();
         csproducts = db.returnAllRecords();
         System.out.println(db.contains("4151512231"));
@@ -40,11 +38,6 @@ public class testCustomer {
              tmp = csproducts.get(i);
 
             System.out.println(tmp.lineRepresentation());
-
         }
-
-
-      
-        
    }
 }

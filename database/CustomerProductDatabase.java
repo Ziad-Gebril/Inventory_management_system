@@ -20,14 +20,4 @@ public CustomerProductDatabase(String filename) {
         return new CustomerProduct(parts[0], parts[1], LocalDate.parse("12-10-2022",formatter));
     }
 
-    @Override
-    public String getSearchKey(CustomerProduct customerProduct) {
-        return customerProduct.getSearchKey();
-    }
-
-    @Override
-    public String getLineRepresentation(CustomerProduct customerProduct) {
-        return customerProduct.lineRepresentation();
-    }
-
 }
