@@ -12,15 +12,4 @@ public class EmployeeUserDatabase extends Database<EmployeeUser> {
         String[] parts = line.split(",");
         return new EmployeeUser(parts[0], parts[1], parts[2], parts[3], parts[4]);
     }
-
-    @Override
-    public String getSearchKey(EmployeeUser employeeUser) {
-        return employeeUser.getSearchKey();
-    }
-
-    @Override
-    public String getLineRepresentation(EmployeeUser employeeUser) {
-        return employeeUser.lineRepresentation();
-    }
-
 }
