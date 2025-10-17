@@ -1,5 +1,8 @@
 package database;
 
-public class ProductDatabase {
+import employee.Product;
+
+public class ProductDatabase extends Database<Product>{
+
 
 }
