@@ -14,14 +14,5 @@ public class ProductDatabase extends Database<Product>{
         String[] parts = line.split(",");
         return new Product(parts[0], parts[1], parts[2], parts[3], Integer.valueOf(parts[4]),Float.valueOf(parts[5]));
     }
-/* 
-    @Override
-    public String searchKey(Product product) {
-        return product.getSearchKey();
-    }
-
-    @Override
-    public String lineRepresentation(Product product) {
-        return product.lineRepresentation();
-    }*/
 }
+
