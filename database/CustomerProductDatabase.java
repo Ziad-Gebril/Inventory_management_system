@@ -7,8 +7,7 @@ import java.time.format.*;
 
 public class CustomerProductDatabase extends Database<CustomerProduct> {
     //database for customer products
-
-    public CustomerProductDatabase(String filename) {
+public CustomerProductDatabase(String filename) {
        super(filename);
     }
 //****************************************** methods **************************************** */
@@ -30,7 +29,5 @@ public class CustomerProductDatabase extends Database<CustomerProduct> {
     public String getLineRepresentation(CustomerProduct customerProduct) {
         return customerProduct.lineRepresentation();
     }
-
-
 
 }

@@ -15,3 +15,4 @@ public class ProductDatabase extends Database<Product>{
         return new Product(parts[0], parts[1], parts[2], parts[3], Integer.valueOf(parts[4]),Float.valueOf(parts[5]));
     }
 }
+

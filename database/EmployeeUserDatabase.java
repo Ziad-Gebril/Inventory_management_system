@@ -13,3 +13,4 @@ public class EmployeeUserDatabase extends Database<EmployeeUser> {
         return new EmployeeUser(parts[0], parts[1], parts[2], parts[3], parts[4]);
     }
 }
+
