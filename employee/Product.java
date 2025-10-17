@@ -22,4 +22,8 @@ public class Product {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+    public String lineRepresentation() {
+        return productID + "," + productName + "," + manufacturerName + "," + supplierName + "," +  quantity + "," + price;
+    }
+    public String getSearchKey(){return productID;}
 }
