@@ -1,4 +1,6 @@
-P1,Laptop,Apple,TechSupplier,10,1500
-P2,Phone,Apple,TechSupplier,10,1000
-P3,Laptop,Dell,TechSupplier,15,700
-P4,Phone,Samsung,TechSupplier,10,1000
+P1,Laptop,Apple,TechSupplier,10,1500.0
+P2,Phone,Apple,TechSupplier,10,1000.0
+P3,Laptop,Dell,TechSupplier,15,700.0
+P4,Phone,Samsung,TechSupplier,10,1000.0
+P7,Tablet,Samsung,TechSupplier,5,1000.0
+P7,Tablet,Samsung,TechSupplier,5,1000.0
