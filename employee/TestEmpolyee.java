@@ -3,7 +3,7 @@ import database.EmployeeUserDatabase;
 
 public class TestEmpolyee {
      public static void main(String[] args) {
-        EmployeeUserDatabase db = new EmployeeUserDatabase("employee/employees.txt");
+        EmployeeUserDatabase db = new EmployeeUserDatabase("E:\\OneDrive\\Desktop\\Programing\\Cursor\\Labs\\Lab4\\inventory\\Inventory_management_system\\employee\\employees.txt");
 
         db.readFromFile();
 
