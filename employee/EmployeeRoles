@@ -1,4 +1,5 @@
 package employee;
+
 import customer_product.CustomerProduct;
 import database.CustomerProductDatabase;
 import database.ProductDatabase;
@@ -6,19 +7,25 @@ import product.Product;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-public class EmployeeRole {
+
+public class EmployeeRoles {
 private final ProductDatabase productsDb;
 private final CustomerProductDatabase custProdDb;
-public EmployeeRole() {
+
+public EmployeeRoles() 
+{
 productsDb = new ProductDatabase("product/Product.txt");
 custProdDb = new CustomerProductDatabase("customer_product/CustomerProduct.txt");
 productsDb.readFromFile();
 custProdDb.readFromFile();
 }
-public void addProduct(String id, String name, String maker, String supplier, int qty) {
+
+public void addProduct(String id, String name, String maker, String supplier, int qty) 
+{
 if (!productsDb.contains(id)) {
 productsDb.insertRecord(new Product(id, name, maker, supplier, qty, 0.0f));
 productsDb.saveToFile();}}
+
 public Product[] getListOfProducts() {
 ArrayList<Product> list = productsDb.returnAllRecords();
 return list.toArray(new Product[0]);
