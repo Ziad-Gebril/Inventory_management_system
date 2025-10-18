@@ -4,9 +4,14 @@ import database.EmployeeUserDatabase;
 import employee.EmployeeUser;
 import java.util.ArrayList;
 
-class AdminRole {
 
-    private final EmployeeUserDatabase database;
+class AdminRole {
+    final String RESET = "\u001B[0m";
+    final String RED = "\u001B[31m";
+    final String GREEN = "\u001B[32m";
+
+    private EmployeeUserDatabase database;
+    
 
     public AdminRole() {
 
@@ -19,7 +24,6 @@ class AdminRole {
         if (!database.contains(employeeId)) {
             EmployeeUser emp = new EmployeeUser(employeeId, name, email, address, phoneNumber);
             database.insertRecord(emp);
-            database.saveToFile();
         }
     }
 
@@ -31,7 +35,11 @@ class AdminRole {
     public void removeEmployee(String key) {
         if (database.contains(key)) {
             database.deleteRecord(key);
-            database.saveToFile();
+            System.out.println(GREEN + "Employee with ID: " + key +" Was Deleted Successfully..."+ RESET);
+        }
+        else
+        {
+            System.out.println(RED + "No Emplyee with this ID is Listed........." + RESET);
         }
     }
 
