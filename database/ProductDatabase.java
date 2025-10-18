@@ -1,6 +1,6 @@
 package database;
 
-import employee.Product;
+import product.Product;
 
 
 public class ProductDatabase extends Database<Product>{

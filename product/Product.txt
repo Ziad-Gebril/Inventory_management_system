@@ -6,3 +6,4 @@ P7,Tablet,Samsung,TechSupplier,5,1000.0
 P7,Tablet,Samsung,TechSupplier,5,1000.0
 P7,Tablet,Samsung,TechSupplier,5,1000.0
 P7,Tablet,Samsung,TechSupplier,5,1000.0
+P7,Tablet,Samsung,TechSupplier,5,1000.0

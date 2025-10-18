@@ -1,4 +1,4 @@
-package employee;
+package customer_product;
 
 import java.time.LocalDate;
 import database.CustomerProductDatabase;
@@ -11,7 +11,7 @@ public class testCustomer {
         
         ArrayList<CustomerProduct> csproducts;
 
-        CustomerProductDatabase db = new CustomerProductDatabase("database/CustomerProduct.txt");
+        CustomerProductDatabase db = new CustomerProductDatabase("customer_product/CustomerProduct.txt");
         db.readFromFile();
         csproducts = db.returnAllRecords();
         System.out.println(db.contains("4151512231"));

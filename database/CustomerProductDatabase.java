@@ -1,9 +1,10 @@
 package database;
 
 
-import employee.CustomerProduct;
 import java.time.LocalDate;
 import java.time.format.*;
+
+import customer_product.CustomerProduct;
 
 public class CustomerProductDatabase extends Database<CustomerProduct> {
     //database for customer products

@@ -1,4 +1,4 @@
-package employee;
+package product;
 
 import database.ProductDatabase;
 
@@ -9,7 +9,7 @@ public class TestProduct {
 
         ArrayList<Product> products;
 
-        ProductDatabase db = new ProductDatabase("database/Product.txt");
+        ProductDatabase db = new ProductDatabase("product/Product.txt");
         db.readFromFile();
 
         products=db.returnAllRecords();

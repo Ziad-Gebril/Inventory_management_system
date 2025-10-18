@@ -1,4 +1,4 @@
-package employee;
+package product;
 import database.Record;
 public class Product implements Record {
     private String productID;
