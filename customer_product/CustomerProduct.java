@@ -18,8 +18,7 @@ public class CustomerProduct implements Record {
         this.paid = false;
     }
 
-    // ******************************** getters
-    // ********************************************** */
+    // ******************************** getters ********************************************** */
 
     public String getCustomerSSN() {
         return customerSSN;
@@ -37,8 +36,7 @@ public class CustomerProduct implements Record {
         return paid;
     }
 
-    // ********************************************* setters
-    // ***************************************** */
+    // ********************************************* setters ***************************************** */
 
     public void setPaid(Boolean paid) {
         this.paid = paid;
@@ -52,10 +50,10 @@ public class CustomerProduct implements Record {
 
     @Override
     public String getSearchKey() {
-        return customerSSN;
+        String date = getDateFormated();
+        return customerSSN + "," + productID + "," + date ;
     }
-    // ************************************************** helper functions
-    // ******************************************* */
+    // ************************************************** helper functions ******************************************* */
 
     public String getDateFormated() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");

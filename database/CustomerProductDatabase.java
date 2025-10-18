@@ -7,10 +7,12 @@ import java.time.format.*;
 import customer_product.CustomerProduct;
 
 public class CustomerProductDatabase extends Database<CustomerProduct> {
-    //database for customer products
+   
+    //database constructor for customer products
 public CustomerProductDatabase(String filename) {
        super(filename);
     }
+
 //****************************************** methods **************************************** */
 
     @Override
@@ -18,7 +20,8 @@ public CustomerProductDatabase(String filename) {
         String[] parts = line.split(",");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         
-        return new CustomerProduct(parts[0], parts[1], LocalDate.parse("12-10-2022",formatter));
+        return new CustomerProduct(parts[0], parts[1], LocalDate.parse(parts[2],formatter));
     }
+
 
 }
