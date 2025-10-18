@@ -23,6 +23,10 @@ public class Product implements Record {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+    
+    public float getPrice() {
+        return price;
+    }
 
     @Override
     public String lineRepresentation() {
