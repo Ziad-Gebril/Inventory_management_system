@@ -39,5 +39,7 @@ public class testCustomer {
 
             System.out.println(tmp.lineRepresentation());
         }
+
+        System.out.println(tmp.getSearchKey());
    }
 }

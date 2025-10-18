@@ -52,10 +52,10 @@ public class CustomerProduct implements Record {
 
     @Override
     public String getSearchKey() {
-        return customerSSN;
+        String date = getDateFormated();
+        return customerSSN + "," + productID + "," + date;
     }
-    // ************************************************** helper functions
-    // ******************************************* */
+    // ************************************************** helper functions ******************************************* */
 
     public String getDateFormated() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
