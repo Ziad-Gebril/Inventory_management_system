@@ -13,10 +13,8 @@ import customer_product.*;
 import employee.*;
 //import utils.*;
 
-
 public class MainMenu {
 
-    
     static String RESET = "\u001B[0m";
     static String RED = "\u001B[31m";
     static String GREEN = "\u001B[32m";
@@ -25,12 +23,11 @@ public class MainMenu {
     static String PURPLE = "\u001B[35m";
     static String CYAN = "\u001B[36m";
     static String WHITE = "\u001B[37m";
-    
+
     public static void main(String[] args) {
         LoginMenu();
     }
-   
-    
+
     public static void LoginMenu() {
         System.out.println(BLUE + "================= Inventory Management System =================" + RESET);
         System.out.println(GREEN + "1. Admin Login" + RESET);
@@ -39,23 +36,20 @@ public class MainMenu {
         System.out.println(BLUE + "==============================================================" + RESET);
         System.out.print(YELLOW + "Please select an option (1 --> 3): " + RESET);
 
-         
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
-        
 
-        switch(choice)
-        {
+        switch (choice) {
             case 1:
-            clearScreen();
-             
-            adminMenu();
-            break;
+                clearScreen();
+
+                adminMenu();
+                break;
 
             case 2:
-            clearScreen();
-            System.out.println("under construction...");
-            break;
+                clearScreen();
+                System.out.println("under construction...");
+                break;
 
             case 3:
             clearScreen();
@@ -72,7 +66,7 @@ public class MainMenu {
         
     }
 
-    public static void adminMenu(){
+    public static void adminMenu() {
         System.out.println(BLUE + "================= Inventory Management System =================" + RESET);
         System.out.println(GREEN + "1. Add New Employee" + RESET);
         System.out.println(GREEN + "2. Remove Employee" + RESET);
@@ -82,11 +76,10 @@ public class MainMenu {
         System.out.print(YELLOW + "Please select an option (1 --> 4): " + RESET);
 
         Scanner scan = new Scanner(System.in);
-         int choice = scan.nextInt();
-         AdminRole admin = new AdminRole();
+        int choice = scan.nextInt();
+        AdminRole admin = new AdminRole();
 
-        switch(choice)
-        {
+        switch (choice) {
             case 1:
                 clearScreen();
                 MainMenuFunctions.AddEmployee(admin);  
@@ -174,7 +167,5 @@ public class MainMenu {
         }
 
     }
-
-    
 
 }

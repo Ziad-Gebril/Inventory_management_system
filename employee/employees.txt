@@ -1,2 +1,7 @@
 E3,Omar,omar@example.com,Giza,01000000031
 E4,dsfs,nour@example.com,Mansoura,01000000045
+<<<<<<< HEAD
+=======
+E5,fgh,nour@example.com,Mansoura,01000000045
+E10,f,nour@example.com,Mansoura,01000000045
+>>>>>>> 36eed5beab1cc3787b03b860d376eec2265a356c
