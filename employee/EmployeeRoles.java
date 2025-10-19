@@ -8,8 +8,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Scanner;
+import utils.Validator;
 
 public class EmployeeRoles {
+
     final String RESET = "\u001B[0m";
     final String RED = "\u001B[31m";
     final String GREEN = "\u001B[32m";
@@ -36,7 +39,17 @@ public class EmployeeRoles {
     public void addProduct(String id, String name, String maker, String supplier, int qty) //NO PRICE IS SET , it set to ZERO
      {
         if (!productsDb.contains(id)) {
-            productsDb.insertRecord(new Product(id, name, maker, supplier, qty, 0.0f));
+            Scanner scan = new Scanner(System.in);
+            System.out.print("insert the product's price: ");
+            String stringprice = scan.nextLine();
+            if(!Validator.isFloat(stringprice))
+            {
+            System.out.println(RED + "Error The Price must be Positive Floats........");
+            return;
+            }
+            Float price = Float.valueOf(stringprice);
+
+            productsDb.insertRecord(new Product(id, name, maker, supplier, qty, price));
             System.out.println(GREEN + "The Product has been ADDED Successfully......" + RESET);
             productsDb.saveToFile();
         }
@@ -55,10 +68,13 @@ public class EmployeeRoles {
         return list.toArray(new Product[0]);
     }
 
+
     public CustomerProduct[] getListOfPurchasingOperations() {
         ArrayList<CustomerProduct> list = custProdDb.returnAllRecords();
         return list.toArray(new CustomerProduct[0]);
     }
+
+    
 
     public boolean purchaseProduct(String ssn, String productID, LocalDate date) {
         Product p = productsDb.getRecord(productID);
@@ -66,8 +82,11 @@ public class EmployeeRoles {
             System.out.println(RED + "insuffisient Quantity of The Product OR Wrong ID....."+ RESET);
             return false;
         }
+
         p.setQuantity(p.getQuantity() - 1);
-        custProdDb.insertRecord(new CustomerProduct(ssn, productID, date));
+        CustomerProduct cs = new CustomerProduct(ssn, productID, date);
+        cs.setPaid(false);
+        custProdDb.insertRecord(cs);
         productsDb.saveToFile();
         custProdDb.saveToFile();
         System.out.println(GREEN + "Purshasing Product Operation Done Successfully.........."+ RESET);

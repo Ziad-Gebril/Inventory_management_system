@@ -11,7 +11,7 @@ public class EmployeeRoleTest {
 
 
         EmployeeRoles emp = new EmployeeRoles();
-        //emp.addProduct("P111", "iPhone", "Apple", "TechSupplier", 100);
+        emp.addProduct("P141", "iPhone14", "Apple", "TechSupplier", 100);
 
        /* 
         Product[] list = emp.getListOfProducts();
@@ -30,10 +30,11 @@ public class EmployeeRoleTest {
        }
          */
 
+         /* 
          DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
          System.out.println(emp.applyPayment("4151512231", LocalDate.parse("12-08-2023",formatter)));
-         
+         */
 
 
 

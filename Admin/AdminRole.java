@@ -5,7 +5,7 @@ import employee.EmployeeUser;
 import java.util.ArrayList;
 
 
-class AdminRole {
+public class AdminRole {
     final String RESET = "\u001B[0m";
     final String RED = "\u001B[31m";
     final String GREEN = "\u001B[32m";
@@ -16,7 +16,7 @@ class AdminRole {
     public AdminRole() {
 
         //E:\\OneDrive\\Desktop\\Programing\\Cursor\\Labs\\Lab4\\inventory\\Inventory_management_system\\employee\\employees.txt
-        this.database = new EmployeeUserDatabase("E:\\OneDrive\\Desktop\\Programing\\Cursor\\Labs\\Lab4\\inventory\\Inventory_management_system\\employee\\employees.txt");
+        this.database = new EmployeeUserDatabase("employee/employees.txt");
         this.database.readFromFile();
     }
 
@@ -24,6 +24,8 @@ class AdminRole {
         if (!database.contains(employeeId)) {
             EmployeeUser emp = new EmployeeUser(employeeId, name, email, address, phoneNumber);
             database.insertRecord(emp);
+            database.saveToFile();
+            
         }
     }
 
@@ -36,6 +38,7 @@ class AdminRole {
         if (database.contains(key)) {
             database.deleteRecord(key);
             System.out.println(GREEN + "Employee with ID: " + key +" Was Deleted Successfully..."+ RESET);
+            database.saveToFile();
         }
         else
         {
