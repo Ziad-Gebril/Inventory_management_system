@@ -114,10 +114,13 @@ public class MainMenu {
 
     public static void EmployeeMenu(){
         System.out.println(BLUE + "================= Inventory Management System =================" + RESET);
-        System.out.println(GREEN + "1. Add New Employee" + RESET);
-        System.out.println(GREEN + "2. Remove Employee" + RESET);
-        System.out.println(GREEN + "3. View All Employees" + RESET);
-        System.out.println(GREEN + "4. Logout" + RESET);
+        System.out.println(GREEN + "1. Add Product " + RESET);
+        System.out.println(GREEN + "2. Get List Of Products" + RESET);
+        System.out.println(GREEN + "3. Get List Of Purchasing Operations" + RESET);
+        System.out.println(GREEN + "4. Purchase Product" + RESET);
+        System.out.println(GREEN + "5. Return Product" + RESET);
+        System.out.println(GREEN + "6. applyPayment" + RESET);
+        System.out.println(GREEN + "7. Logout" + RESET);
         System.out.println(BLUE + "===============================================================" + RESET);
         System.out.print(YELLOW + "Please select an option (1 --> 4): " + RESET);
 
@@ -130,7 +133,7 @@ public class MainMenu {
             case 1:
                 clearScreen();
                      
-                //adding new employee
+                
                 break;
             case 2:
                clearScreen();
@@ -139,14 +142,30 @@ public class MainMenu {
             case 3:
             clearScreen();
            
-                //view all employees
+                
                 break;
             case 4:
+            clearScreen();
+                System.out.println("under construction...");
+               
+                break;
+
+            case 5:
+
+            break;
+
+
+            case 6:
+
+            break;
+            
+            case 7:
             clearScreen();
                 System.out.println("under construction...");
                 Employee.logout();
                 LoginMenu();
                 break;
+
             default :
             System.out.println(RED + "Invalid Choice! Please try again." + RESET);
             adminMenu();

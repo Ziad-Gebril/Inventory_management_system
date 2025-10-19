@@ -55,10 +55,13 @@ public class EmployeeRoles {
         return list.toArray(new Product[0]);
     }
 
+
     public CustomerProduct[] getListOfPurchasingOperations() {
         ArrayList<CustomerProduct> list = custProdDb.returnAllRecords();
         return list.toArray(new CustomerProduct[0]);
     }
+
+    
 
     public boolean purchaseProduct(String ssn, String productID, LocalDate date) {
         Product p = productsDb.getRecord(productID);
