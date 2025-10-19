@@ -10,6 +10,8 @@ import database.*;
 import customer_product.*;
 import employee.*;
 //import utils.*;
+import utils.MainMenuFunctions;
+import Admin.AdminRole;
 
 
 public class MainMenu {
@@ -46,7 +48,7 @@ public class MainMenu {
             adminMenu();
             case 2:
             System.out.println("under construction...");
-            employeeMenu();
+            //employeeMenu();
             case 3:
             System.out.println("under construction...");
             System.exit(0);
@@ -58,6 +60,9 @@ public class MainMenu {
     }
 
     public void adminMenu(){
+
+        AdminRole admin = new AdminRole();
+
         System.out.println(BLUE + "================= Inventory Management System =================" + RESET);
         System.out.println(GREEN + "1. Add New Employee" + RESET);
         System.out.println(GREEN + "2. Remove Employee" + RESET);
@@ -73,7 +78,7 @@ public class MainMenu {
         {
             case 1:
                 System.out.println("under construction..."); 
-                AddEmployee();         
+                MainMenuFunctions.AddEmployee(admin);         
                 //adding new employee
             case 2:
                 System.out.println("under construction...");

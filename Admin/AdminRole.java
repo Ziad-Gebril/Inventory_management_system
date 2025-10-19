@@ -5,7 +5,7 @@ import employee.EmployeeUser;
 import java.util.ArrayList;
 
 
-class AdminRole {
+public class AdminRole {
     final String RESET = "\u001B[0m";
     final String RED = "\u001B[31m";
     final String GREEN = "\u001B[32m";

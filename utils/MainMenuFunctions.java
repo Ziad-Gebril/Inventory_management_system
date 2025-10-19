@@ -7,36 +7,56 @@ import java.io.IOException;
 import database.*;
 import customer_product.*;
 import employee.*;
+import Admin.AdminRole;
 
 public class MainMenuFunctions {
 
 
 
 
-    public void AddEmployee ()
+    public static void AddEmployee(AdminRole admin)
     {
+        Scanner scan = new Scanner(System.in);
         
+        String ID = generateEmployeeRandomId();
 
+        System.out.print("Enter the Employee's Name: ");
+        String Name = scan.nextLine();
+
+        System.out.print("Enter the Employee's Email: ");
+        String email = scan.nextLine();
+        isValidEmail(email);
+
+        System.out.print("Enter the Employee's address: ");
+        String address = scan.nextLine();
+       
+        System.out.print("Enter the Employee's Phone Number: ");
+        String Phone = scan.nextLine();
+        isValidPhoneNumber(Phone);
+
+        admin.addEmployee(ID , Name, email, address, );
     }
+
+
     
 
 
 
 
 
-    public String getDateFormated(LocalDate Date) {
+    public static String getDateFormated(LocalDate Date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String date = Date.format(formatter);
         return date;
     }
 
-    public LocalDate getLocalDateFormated(String date) {
+    public static LocalDate getLocalDateFormated(String date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         LocalDate Date = LocalDate.parse(date,formatter);
         return Date;
     }
 
-    public void clearScreen() {
+    public static void clearScreen() {
         try {
             if (System.getProperty("os.name").toLowerCase().contains("windows")) {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
