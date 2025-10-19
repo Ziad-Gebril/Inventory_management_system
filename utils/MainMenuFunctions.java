@@ -83,14 +83,7 @@ public class MainMenuFunctions {
         System.out.print("Enter Purchase Date in formate of dd-mm-yyyy: ");
         String purchaseDate = scanner.nextLine();
         LocalDate date = getLocalDateFormated(purchaseDate);
-        boolean isPurchase = employeeRole.purchaseProduct(SSN, productID, date);
-        if(!isPurchase){
-            System.out.println("Invalid Purchasing Operation!");
-        }
-        else{
-            System.out.println("Purchasing Successfully!");
-        }
-
+        employeeRole.purchaseProduct(SSN, productID, date);
     }
 
 
