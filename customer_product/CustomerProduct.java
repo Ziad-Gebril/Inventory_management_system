@@ -1,5 +1,4 @@
 package customer_product;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import database.Record;

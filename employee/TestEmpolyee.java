@@ -12,12 +12,17 @@ public class TestEmpolyee {
             System.out.println(e.lineRepresentation());
         }
 
-        EmployeeUser newEmp = new EmployeeUser("Nour", "nour@example.com", "Mansoura", "0100000004");
-        db.insertRecord(newEmp);
 
-        db.saveToFile();
+       EmployeeUser newEmp = new EmployeeUser("E10", "f", "nour@example.com", "Mansoura", "01000000045");
+       db.insertRecord(newEmp); 
+       db.saveToFile();
 
         System.out.println("\nAfter adding Nour and saving:");
+        for (EmployeeUser e : db.returnAllRecords()) {
+            System.out.println(e.lineRepresentation());
+        }
+        db.deleteRecord("E2");
+        db.saveToFile();
         for (EmployeeUser e : db.returnAllRecords()) {
             System.out.println(e.lineRepresentation());
         }
