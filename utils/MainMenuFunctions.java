@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 import static utils.Generator.generateCustomerRandomId;
 import static utils.Generator.generateEmployeeRandomId;
+import static utils.Validator.isInteger;
 import static utils.Validator.isValidEmail;
 import static utils.Validator.isValidPhoneNumber;
 
@@ -120,7 +121,7 @@ public class MainMenuFunctions {
         Scanner scan = new Scanner(System.in);
         String ID = Generator.generateProductRandomId();
 
-        Boolean flag = true;
+
 
         System.out.println("Adding product to database ");
         System.out.print("Enter the Product's Name: ");
@@ -128,7 +129,8 @@ public class MainMenuFunctions {
         if(!Validator.isValidString(Name))
         {
         System.out.println(RED + "Error The name must be String........");
-        flag = false;
+        scan.nextLine();
+        return;
         }
 
         System.out.print("Enter product maker: ");
@@ -136,7 +138,8 @@ public class MainMenuFunctions {
         if(!Validator.isValidString(maker))
         {
         System.out.println(RED + "Error The maker must be String........");
-        flag = false;
+        scan.nextLine();
+        return;
         }
 
         System.out.print("Enter product supplier: ");
@@ -144,22 +147,23 @@ public class MainMenuFunctions {
         if(!Validator.isValidString(supplier))
         {
         System.out.println(RED + "Error The supplier must be String........");
-        flag = false;
+        scan.nextLine();
+        return;
         }
 
         System.out.print("Enter product quantity: ");
-        int quantity = scan.nextInt();
-        scan.nextLine();
-        if(!Validator.isPositiveNumber(quantity))
+        String StringQuantity = scan.nextLine();
+        if(!isInteger(StringQuantity))
         {
         System.out.println(RED + "Error The quantity must be Positive Integer........");
-        flag = false;
+        scan.nextLine();
+        return;
         }
-        
 
-        if(flag){
+        int quantity = Integer.valueOf(StringQuantity);
+        
+      
         emp.addProduct(ID , Name, maker , supplier, quantity);
-        }
 
         System.out.println("Press Any key to Continue...........");
         scan.nextLine();

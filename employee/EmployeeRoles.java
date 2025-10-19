@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Scanner;
+import utils.Validator;
 
 public class EmployeeRoles {
 
@@ -40,7 +41,14 @@ public class EmployeeRoles {
         if (!productsDb.contains(id)) {
             Scanner scan = new Scanner(System.in);
             System.out.print("insert the product's price: ");
-            float price = scan.nextFloat();
+            String stringprice = scan.nextLine();
+            if(!Validator.isFloat(stringprice))
+            {
+            System.out.println(RED + "Error The Price must be Positive Floats........");
+            return;
+            }
+            Float price = Float.valueOf(stringprice);
+
             productsDb.insertRecord(new Product(id, name, maker, supplier, qty, price));
             System.out.println(GREEN + "The Product has been ADDED Successfully......" + RESET);
             productsDb.saveToFile();
