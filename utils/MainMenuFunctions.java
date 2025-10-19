@@ -12,6 +12,10 @@ import utils.Validator;
 import utils.Generator;
 import java.util.ArrayList;
 
+import static utils.Generator.generateEmployeeRandomId;
+import static utils.Validator.isValidEmail;
+import static utils.Validator.isValidPhoneNumber;
+
 public class MainMenuFunctions {
 
 
@@ -37,7 +41,15 @@ public class MainMenuFunctions {
         String Phone = scan.nextLine();
         Validator.isValidPhoneNumber(Phone);
 
-        admin.addEmployee(ID , Name, email, address, Phone );
+        admin.addEmployee(ID , Name, email, address,Phone );
+    }
+    public static void RemoveEmployee(AdminRole admin)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Removing employee from database: ");
+        System.out.print("\nEnter the Employee's ID: ");
+        String ID = scan.nextLine();
+        admin.removeEmployee(ID);
     }
 
 

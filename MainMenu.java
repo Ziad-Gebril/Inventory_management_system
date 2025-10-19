@@ -1,6 +1,8 @@
 import java.time.LocalDate;
 import java.time.format.*;
 import java.util.*;
+
+import Admin.AdminRole;
 import utils.Generator;
 import utils.MainMenuFunctions;
 import utils.Validator;
@@ -10,8 +12,6 @@ import database.*;
 import customer_product.*;
 import employee.*;
 //import utils.*;
-import utils.MainMenuFunctions;
-import Admin.AdminRole;
 
 
 public class MainMenu {
@@ -49,7 +49,6 @@ public class MainMenu {
             adminMenu();
             case 2:
             System.out.println("under construction...");
-            //employeeMenu();
             case 3:
             System.out.println("under construction...");
             System.exit(0);
@@ -61,9 +60,6 @@ public class MainMenu {
     }
 
     public void adminMenu(){
-
-        AdminRole admin = new AdminRole();
-
         System.out.println(BLUE + "================= Inventory Management System =================" + RESET);
         System.out.println(GREEN + "1. Add New Employee" + RESET);
         System.out.println(GREEN + "2. Remove Employee" + RESET);
@@ -74,6 +70,7 @@ public class MainMenu {
 
         Scanner scan = new Scanner(System.in);
          int choice = scan.nextInt();
+         AdminRole admin = new AdminRole();
 
         switch(choice)
         {
@@ -83,13 +80,14 @@ public class MainMenu {
                 //adding new employee
             case 2:
                 System.out.println("under construction...");
-                //removing employee
+               MainMenuFunctions.RemoveEmployee(admin);
             case 3:
             clearScreen();
             MainMenuFunctions.ShowAllEmployees(admin);
                 //view all employees
             case 4:
                 System.out.println("under construction...");
+                admin.logout();
                 LoginMenu();
             default :
             System.out.println(RED + "Invalid Choice! Please try again." + RESET);
