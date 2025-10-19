@@ -69,7 +69,7 @@ public class MainMenu {
 
         Scanner scan = new Scanner(System.in);
          int choice = scan.nextInt();
-         AdminRole adminRole = new AdminRole();
+         AdminRole admin = new AdminRole();
 
         switch(choice)
         {
@@ -78,11 +78,12 @@ public class MainMenu {
                 //adding new employee
             case 2:
                 System.out.println("under construction...");
-               MainMenuFunctions.RemoveEmployee(adminRole);
+               MainMenuFunctions.RemoveEmployee(admin);
             case 3:
                 //view all employees
             case 4:
                 System.out.println("under construction...");
+                admin.logout();
                 LoginMenu();
             default :
             System.out.println(RED + "Invalid Choice! Please try again." + RESET);
