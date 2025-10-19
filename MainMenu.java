@@ -138,10 +138,10 @@ public class MainMenu {
 
                 break;
 
-                
+
             case 3:
                 clearScreen();
-                MainMenuFunctions.getListOfPurchasingOperations(employee)
+                MainMenuFunctions.getListOfPurchasingOperations(employee);
                 break;
 
 
@@ -165,7 +165,7 @@ public class MainMenu {
 
             case 7:
             clearScreen();
-                Employee.logout();
+                employee.logout();
                 LoginMenu();
                 break;
 
