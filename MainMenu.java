@@ -132,27 +132,32 @@ public class MainMenu {
             case 1:
                 clearScreen();
 
+                EmployeeMenu();
                 break;
             case 2:
                 clearScreen();
 
+                EmployeeMenu();
                 break;
 
 
             case 3:
                 clearScreen();
                 MainMenuFunctions.getListOfPurchasingOperations(employee);
+                EmployeeMenu();
                 break;
 
 
             case 4:
             clearScreen();
             MainMenuFunctions.purchaseProduct(employee);  
+            EmployeeMenu();
             break;
 
             case 5:
             clearScreen();
             MainMenuFunctions.returnProduct(employee);
+            EmployeeMenu();
 
             break;
 

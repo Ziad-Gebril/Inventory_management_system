@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class EmployeeRoles {
     final String RESET = "\u001B[0m";
@@ -36,7 +37,11 @@ public class EmployeeRoles {
     public void addProduct(String id, String name, String maker, String supplier, int qty) //NO PRICE IS SET , it set to ZERO
      {
         if (!productsDb.contains(id)) {
-            productsDb.insertRecord(new Product(id, name, maker, supplier, qty, 0.0f));
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter the price of the Prouct: ");
+            Float price = scan.nextFloat();
+
+            productsDb.insertRecord(new Product(id, name, maker, supplier, qty, price));
             System.out.println(GREEN + "The Product has been ADDED Successfully......" + RESET);
             productsDb.saveToFile();
         }
@@ -69,8 +74,11 @@ public class EmployeeRoles {
             System.out.println(RED + "insuffisient Quantity of The Product OR Wrong ID....."+ RESET);
             return false;
         }
+
         p.setQuantity(p.getQuantity() - 1);
-        custProdDb.insertRecord(new CustomerProduct(ssn, productID, date));
+        CustomerProduct cs = new CustomerProduct(ssn, productID, date);
+        cs.setPaid(false);
+        custProdDb.insertRecord(cs);
         productsDb.saveToFile();
         custProdDb.saveToFile();
         System.out.println(GREEN + "Purshasing Product Operation Done Successfully.........."+ RESET);

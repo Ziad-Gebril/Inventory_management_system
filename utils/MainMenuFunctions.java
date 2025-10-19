@@ -13,6 +13,7 @@ import utils.Validator;
 import utils.Generator;
 import java.util.ArrayList;
 
+import static utils.Generator.generateCustomerRandomId;
 import static utils.Generator.generateEmployeeRandomId;
 import static utils.Validator.isValidEmail;
 import static utils.Validator.isValidPhoneNumber;
@@ -103,26 +104,34 @@ public class MainMenuFunctions {
 
 
     public static void getListOfPurchasingOperations(EmployeeRoles employeeRole){
+
         CustomerProduct [] list = employeeRole.getListOfPurchasingOperations();
         for(int i = 0; i < list.length; i++){
             System.out.println(list[i].lineRepresentation());
         }
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Press Any key to Continue...........");
+        scan.nextLine();
+
     }
 
     public static void purchaseProduct(EmployeeRoles employeeRole){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter CustomerSSN: ");
-        String SSN = scanner.nextLine();
+        
+        String SSN = generateCustomerRandomId();
         System.out.print("Enter Product ID: ");
         String productID = scanner.nextLine();
-        System.out.print("Enter Purchase Date in formate of dd-mm-yyyy: ");
-        String purchaseDate = scanner.nextLine();
-        LocalDate date = getLocalDateFormated(purchaseDate);
-        employeeRole.purchaseProduct(SSN, productID, date);
+        
+        LocalDate purchaseDate = LocalDate.now();
+       
+        employeeRole.purchaseProduct(SSN, productID, purchaseDate);
+
+        System.out.println("Press Any key to Continue...........");
+        scanner.nextLine();
     }
 
 
-    
+
     public static void returnProduct(EmployeeRoles Emp)
     {
 
