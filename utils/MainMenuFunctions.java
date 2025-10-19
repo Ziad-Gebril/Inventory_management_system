@@ -10,6 +10,7 @@ import employee.*;
 import Admin.AdminRole;
 import utils.Validator;
 import utils.Generator;
+import java.util.ArrayList;
 
 public class MainMenuFunctions {
 
@@ -39,6 +40,17 @@ public class MainMenuFunctions {
         admin.addEmployee(ID , Name, email, address, Phone );
     }
 
+
+    public static void ShowAllEmployees(AdminRole admin)
+    {
+        EmployeeUser[] list = admin.getListOfEmployees();
+
+        for(int i=0 ; i< list.length ; i++)
+       {
+        System.out.println(list[i].lineRepresentation());
+       }
+        
+    }
 
     
 

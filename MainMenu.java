@@ -16,6 +16,7 @@ import Admin.AdminRole;
 
 public class MainMenu {
 
+    
     final String RESET = "\u001B[0m";
     final String RED = "\u001B[31m";
     final String GREEN = "\u001B[32m";
@@ -77,13 +78,15 @@ public class MainMenu {
         switch(choice)
         {
             case 1:
-                System.out.println("under construction..."); 
+                clearScreen();
                 MainMenuFunctions.AddEmployee(admin);         
                 //adding new employee
             case 2:
                 System.out.println("under construction...");
                 //removing employee
             case 3:
+            clearScreen();
+            MainMenuFunctions.ShowAllEmployees(admin);
                 //view all employees
             case 4:
                 System.out.println("under construction...");
