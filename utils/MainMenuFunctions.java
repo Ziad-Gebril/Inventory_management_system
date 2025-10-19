@@ -43,6 +43,7 @@ public class MainMenuFunctions {
 
         admin.addEmployee(ID , Name, email, address,Phone );
     }
+    
     public static void RemoveEmployee(AdminRole admin)
     {
         Scanner scan = new Scanner(System.in);
