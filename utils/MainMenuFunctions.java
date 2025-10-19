@@ -94,7 +94,10 @@ public class MainMenuFunctions {
        {
         System.out.println(list[i].lineRepresentation());
        }
-        
+
+       Scanner scanner = new Scanner(System.in);
+        System.out.println("Press Any key to Continue...........");
+        scanner.nextLine(); 
     }
 
     
@@ -147,7 +150,7 @@ public class MainMenuFunctions {
         if(flag){
         emp.addProduct(ID , Name, maker , supplier, quantity);
         }
-        
+
         System.out.println("Press Any key to Continue...........");
         scan.nextLine();
 

@@ -98,7 +98,6 @@ public class MainMenu {
                 break;
             case 4:
                 clearScreen();
-
                 admin.logout();
                 LoginMenu();
                 break;
