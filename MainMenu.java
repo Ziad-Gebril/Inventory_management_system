@@ -1,6 +1,7 @@
 
 
-
+import java.time.LocalDate;
+import java.time.format.*;
 
 public class MainMenu {
 
@@ -13,4 +14,21 @@ public class MainMenu {
     final String CYAN = "\u001B[36m";
     final String WHITE = "\u001B[37m";
     
+
+
+
+    //**************************************Helping Functions******************
+
+    public String getDateFormated(LocalDate Date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String date = Date.format(formatter);
+        return date;
+    }
+
+    public LocalDate getLocalDateFormated(String date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate Date = LocalDate.parse(date,formatter);
+        return Date;
+    }
+
 }

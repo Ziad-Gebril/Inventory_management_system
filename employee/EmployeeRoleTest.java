@@ -5,6 +5,7 @@ import product.Product;
 import java.time.LocalDate;
 import employee.EmployeeRoles;
 import java.time.format.*;
+import customer_product.*;
 
 public class EmployeeRoleTest {
     public static void main(String[] args) {
@@ -33,7 +34,12 @@ public class EmployeeRoleTest {
 
          DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-         System.out.println(emp.returnProduct("123456789", "P8552", LocalDate.parse("18-10-2025",formatter), LocalDate.now()));
+         System.out.println(emp.applyPayment("4151512231", LocalDate.parse("12-08-2023",formatter)));
+         
+
+
+
+         
 
 
 

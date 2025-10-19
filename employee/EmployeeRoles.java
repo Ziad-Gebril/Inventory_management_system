@@ -5,6 +5,7 @@ import database.CustomerProductDatabase;
 import database.ProductDatabase;
 import product.Product;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
@@ -23,8 +24,8 @@ public class EmployeeRoles {
         //E:\\OneDrive\\Desktop\\Programing\\Cursor\\Labs\\Lab4\\inventory\\Inventory_management_system\\customer_product\\CustomerProduct.txt
         //customer_product/CustomerProduct.txt
 
-        productsDb = new ProductDatabase("E:\\OneDrive\\Desktop\\Programing\\Cursor\\Labs\\Lab4\\inventory\\Inventory_management_system\\product\\Product.txt");
-        custProdDb = new CustomerProductDatabase("E:\\OneDrive\\Desktop\\Programing\\Cursor\\Labs\\Lab4\\inventory\\Inventory_management_system\\customer_product\\CustomerProduct.txt");
+        productsDb = new ProductDatabase("product/Product.txt");
+        custProdDb = new CustomerProductDatabase("customer_product/CustomerProduct.txt");
         productsDb.readFromFile();
         custProdDb.readFromFile();
     }
@@ -75,31 +76,41 @@ public class EmployeeRoles {
 
 
 
-    public double returnProduct(String ssn, String productID, LocalDate purchaseDate, LocalDate returnDate) {
+    public double returnProduct(String ssn, String productID, LocalDate purchaseDate, LocalDate returnDate) { // returns the price of returend product.  // takes date in Local date formate
+       
         if (returnDate.isBefore(purchaseDate)) {
+            System.out.println(RED+ "The Date you entered may be wrong....... " + RESET );
             return -1;
         }
 
         Product p = productsDb.getRecord(productID);
         if (p == null) {
+            System.out.println(RED+ "The Product with ID: " +productID+" Couldn't found....... "+ RESET);
             return -2;
         }
 
-        CustomerProduct target = null;
-        for (CustomerProduct c : custProdDb.returnAllRecords()) {
-            if (c.getCustomerSSN().equals(ssn) && c.getProductID().equals(productID) && c.getPurchaseDate().equals(purchaseDate)) {
-                target = c;
-                break;
-            }
-        }
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String date = purchaseDate.format(formatter);
+        String key = ssn + "," + productID + "," + date;
+        CustomerProduct target = custProdDb.getRecord(key);
 
         if (target == null) {
+            System.out.println(RED+ "This Purshasing operation Details Couldn't found: " + RESET + key);
             return -3;
+        }
+
+        System.out.println(target.isPaid());
+        if (!target.isPaid()) {
+            System.out.println(RED + "This purchasing operation wasn't paid: " + RESET + key);
+            return -4;
         }
         
         long days = ChronoUnit.DAYS.between(purchaseDate, returnDate);
         if (days > 14) {
-            return -4;
+            System.out.println(RED+ "Sorry the 14 DAYS Limit to return the product Has Already PASSED.......... " + RESET);
+            System.out.println("The product was Purshased on: " + date);
+            return -5;
         }
         
         p.setQuantity(p.getQuantity() + 1);
@@ -110,14 +121,16 @@ public class EmployeeRoles {
     }
 
 
-    public boolean applyPayment(String ssn, LocalDate date) {
+    public boolean applyPayment(String ssn, LocalDate date) { // takes date in Local date formate
         for (CustomerProduct c : custProdDb.returnAllRecords()) {
             if (c.getCustomerSSN().equals(ssn) && c.getPurchaseDate().equals(date) && !c.isPaid()) {
                 c.setPaid(true);
                 custProdDb.saveToFile();
+                System.out.println(GREEN + "Purshasig operation has been Paid Successfully......." + RESET);
                 return true;
             }
         }
+        System.out.println(RED + "ERROR, Operation wasn't found or the operation already Paid........" + RESET);
         return false;
     }
 
