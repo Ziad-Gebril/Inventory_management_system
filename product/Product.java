@@ -21,9 +21,16 @@ public class Product implements Record {
         setQuantity(quantity);
         setPrice(price);
     }
-
+    
     public int getQuantity() {
         return quantity;
+    }
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+    
+    public float getPrice() {
+        return price;
     }
 
     @Override
