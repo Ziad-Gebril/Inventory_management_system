@@ -91,6 +91,7 @@ public class MainMenuFunctions {
         System.out.print("\nEnter the Employee's ID: ");
         String ID = scan.nextLine();
         admin.removeEmployee(ID);
+        scan.nextLine();
 
     }
 
