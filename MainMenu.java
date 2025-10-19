@@ -127,27 +127,37 @@ public class MainMenu {
 
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
-        EmployeeRoles Employee = new EmployeeRoles();
 
         switch (choice) {
             case 1:
                 clearScreen();
-
+                MainMenuFunctions.addProduct(employee);
+                EmployeeMenu();
                 break;
             case 2:
                 clearScreen();
-
+                MainMenuFunctions.getListOfProducts(employee);
+                EmployeeMenu();
                 break;
+
+
             case 3:
                 clearScreen();
-
+                MainMenuFunctions.getListOfPurchasingOperations(employee);
+                EmployeeMenu();
                 break;
+
+
             case 4:
             clearScreen();
-               
-                break;
+            MainMenuFunctions.purchaseProduct(employee);  
+            EmployeeMenu();
+            break;
 
             case 5:
+            clearScreen();
+            MainMenuFunctions.returnProduct(employee);
+            EmployeeMenu();
 
             break;
 
@@ -160,7 +170,7 @@ public class MainMenu {
 
             case 7:
             clearScreen();
-                Employee.logout();
+                employee.logout();
                 LoginMenu();
                 break;
 

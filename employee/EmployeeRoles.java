@@ -74,8 +74,11 @@ public class EmployeeRoles {
             System.out.println(RED + "insuffisient Quantity of The Product OR Wrong ID....."+ RESET);
             return false;
         }
+
         p.setQuantity(p.getQuantity() - 1);
-        custProdDb.insertRecord(new CustomerProduct(ssn, productID, date));
+        CustomerProduct cs = new CustomerProduct(ssn, productID, date);
+        cs.setPaid(false);
+        custProdDb.insertRecord(cs);
         productsDb.saveToFile();
         custProdDb.saveToFile();
         System.out.println(GREEN + "Purshasing Product Operation Done Successfully.........."+ RESET);
