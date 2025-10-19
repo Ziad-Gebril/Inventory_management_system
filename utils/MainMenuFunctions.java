@@ -36,35 +36,38 @@ public class MainMenuFunctions {
         
         String ID = Generator.generateEmployeeRandomId();
 
-        Boolean flag = false;
+        Boolean flag = true;
 
         System.out.print("Enter the Employee's Name: ");
         String Name = scan.nextLine();
-        if(!Validator.isValidString(Name));{
+        if(!Validator.isValidString(Name))
+        {
         System.out.println(RED + "Error The name must be String........");
+        flag = false;
         }
+
+
 
         System.out.print("Enter the Employee's Email: ");
         String email = scan.nextLine();
-        if(!Validator.isValidEmail(email));{
-        System.out.println(RED + "Error The name must be String........");
-        flag = true;
-        }
-        else
+        if(!Validator.isValidEmail(email))
         {
-            flag = false;
+        System.out.println(RED + "Error The name must be String........");
+        flag = false;
         }
-
+        
         System.out.print("Enter the Employee's address: ");
         String address = scan.nextLine();
        
         System.out.print("Enter the Employee's Phone Number: ");
         String Phone = scan.nextLine();
-        if(!Validator.isValidPhoneNumber(Phone));
+        if(!Validator.isValidPhoneNumber(Phone))
         {
         System.out.println(RED + "Error The name must be String........");
-        flag = true;
+        flag = false;
         }
+        
+
 
         if(flag){
         admin.addEmployee(ID , Name, email, address,Phone );
