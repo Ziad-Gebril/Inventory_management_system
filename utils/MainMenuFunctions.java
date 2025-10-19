@@ -7,6 +7,7 @@ import java.io.IOException;
 import database.*;
 import customer_product.*;
 import employee.*;
+import product.Product;
 import Admin.AdminRole;
 import utils.Validator;
 import utils.Generator;
@@ -64,6 +65,13 @@ public class MainMenuFunctions {
         System.out.println(list[i].lineRepresentation());
        }
         
+    }
+    
+    public static void getListOfPurchasingOperations(EmployeeRoles employeeRole){
+        CustomerProduct [] list = employeeRole.getListOfPurchasingOperations();
+        for(int i = 0; i < list.length; i++){
+            System.out.println(list[i].lineRepresentation());
+        }
     }
 
 
