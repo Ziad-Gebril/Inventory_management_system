@@ -2,12 +2,16 @@ import java.time.LocalDate;
 import java.time.format.*;
 import java.util.*;
 import utils.Generator;
+import utils.MainMenuFunctions;
 import utils.Validator;
 import java.lang.InterruptedException;
 import java.io.IOException;
 import database.*;
 import customer_product.*;
 import employee.*;
+//import utils.*;
+
+
 public class MainMenu {
 
     final String RESET = "\u001B[0m";
@@ -32,11 +36,13 @@ public class MainMenu {
          
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
+        
 
         switch(choice)
         {
             case 1:
-            System.out.println("under construction...");            
+            clearScreen();
+             
             adminMenu();
             case 2:
             System.out.println("under construction...");
@@ -66,7 +72,8 @@ public class MainMenu {
         switch(choice)
         {
             case 1:
-                System.out.println("under construction...");          
+                System.out.println("under construction..."); 
+                AddEmployee();         
                 //adding new employee
             case 2:
                 System.out.println("under construction...");
@@ -80,6 +87,19 @@ public class MainMenu {
             System.out.println(RED + "Invalid Choice! Please try again." + RESET);
             adminMenu();
         }
+    }
+
+    public void clearScreen() {
+        try {
+            if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                new ProcessBuilder("clear").inheritIO().start().waitFor();
+            }
+        } catch (IOException | InterruptedException ex) {
+            ex.printStackTrace();
+        }
+
     }
 
     
