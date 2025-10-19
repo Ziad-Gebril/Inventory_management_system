@@ -18,8 +18,16 @@ import static utils.Validator.isValidPhoneNumber;
 
 public class MainMenuFunctions {
 
+    static String RESET = "\u001B[0m";
+    static String RED = "\u001B[31m";
+    static String GREEN = "\u001B[32m";
+    static String YELLOW = "\u001B[33m";
+    static String BLUE = "\u001B[34m";
+    static String PURPLE = "\u001B[35m";
+    static String CYAN = "\u001B[36m";
+    static String WHITE = "\u001B[37m";
 
-
+ //Admin Functions
 
     public static void AddEmployee(AdminRole admin)
     {
@@ -27,23 +35,41 @@ public class MainMenuFunctions {
         
         String ID = Generator.generateEmployeeRandomId();
 
+        Boolean flag = false;
+
         System.out.print("Enter the Employee's Name: ");
         String Name = scan.nextLine();
+        if(!Validator.isValidString(Name));{
+        System.out.println(RED + "Error The name must be String........");
+        }
 
         System.out.print("Enter the Employee's Email: ");
         String email = scan.nextLine();
-        Validator.isValidEmail(email);
+        if(!Validator.isValidEmail(email));{
+        System.out.println(RED + "Error The name must be String........");
+        flag = true;
+        }
+        else
+        {
+            flag = false;
+        }
 
         System.out.print("Enter the Employee's address: ");
         String address = scan.nextLine();
        
         System.out.print("Enter the Employee's Phone Number: ");
         String Phone = scan.nextLine();
-        Validator.isValidPhoneNumber(Phone);
+        if(!Validator.isValidPhoneNumber(Phone));
+        {
+        System.out.println(RED + "Error The name must be String........");
+        flag = true;
+        }
 
+        if(flag){
         admin.addEmployee(ID , Name, email, address,Phone );
-    }
-    
+        }
+    } 
+
     public static void RemoveEmployee(AdminRole admin)
     {
         Scanner scan = new Scanner(System.in);
@@ -66,6 +92,63 @@ public class MainMenuFunctions {
         
     }
 
+
+    //Employee Functions
+
+    public static void returnProduct(EmployeeRoles Emp)
+    {
+
+        Scanner scan = new Scanner(System.in);
+        LocalDate Returndate = LocalDate.now();
+
+        System.out.print("Enter the CustomerSSN Code: ");
+        String SSN = scan.nextLine();
+
+        System.out.print("Enter The Product Code: ");
+        String productID = scan.nextLine();
+
+        System.out.print("Enter Date Of purchasing in form dd-mm-yyyy: ");
+        String date = scan.nextLine();
+        LocalDate purchaseDate = getLocalDateFormated(date);
+
+
+        Double price = Emp.returnProduct(SSN, productID, purchaseDate, Returndate);
+        if(price >= 0)
+        {
+            System.out.println(GREEN + "Returned Product's Price is: " + price + RESET);
+           
+        }
+        System.out.println("Press Any key to Continue...........");
+        scan.nextLine();
+        
+    }
+
+
+    public static void applyPayment(EmployeeRoles Emp)
+    {
+        Scanner scan = new Scanner(System.in);
+
+
+        System.out.print("Enter the CustomerSSN Code: ");
+        String SSN = scan.nextLine();
+
+
+        System.out.print("Enter Date Of Requestin purchasing in form dd-mm-yyyy: ");
+        String date = scan.nextLine();
+        LocalDate requestDate = getLocalDateFormated(date);
+
+        Emp.applyPayment(SSN, requestDate);
+        System.out.println("Press Any key to Continue...........");
+        scan.nextLine();
+
+
+
+
+    }
+
+
+
+    //helping Functions
 
     public static String getDateFormated(LocalDate Date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");

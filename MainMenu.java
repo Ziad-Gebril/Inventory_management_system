@@ -42,13 +42,12 @@ public class MainMenu {
         switch (choice) {
             case 1:
                 clearScreen();
-
                 adminMenu();
                 break;
 
             case 2:
                 clearScreen();
-                System.out.println("under construction...");
+                EmployeeMenu();
                 break;
 
             case 3:
@@ -67,6 +66,7 @@ public class MainMenu {
     }
 
     public static void adminMenu() {
+        clearScreen();
         System.out.println(BLUE + "================= Inventory Management System =================" + RESET);
         System.out.println(GREEN + "1. Add New Employee" + RESET);
         System.out.println(GREEN + "2. Remove Employee" + RESET);
@@ -113,6 +113,8 @@ public class MainMenu {
 
 
     public static void EmployeeMenu(){
+        clearScreen();
+        EmployeeRoles employee = new EmployeeRoles();
         System.out.println(BLUE + "================= Inventory Management System =================" + RESET);
         System.out.println(GREEN + "1. Add Product " + RESET);
         System.out.println(GREEN + "2. Get List Of Products" + RESET);
@@ -146,22 +148,24 @@ public class MainMenu {
                 break;
             case 4:
             clearScreen();
-                System.out.println("under construction...");
                
                 break;
 
             case 5:
-
+            clearScreen();
+            MainMenuFunctions.returnProduct(employee);
+            EmployeeMenu();
             break;
 
 
             case 6:
-
+            clearScreen();
+            MainMenuFunctions.applyPayment(employee);
+            EmployeeMenu();
             break;
-            
+
             case 7:
             clearScreen();
-                System.out.println("under construction...");
                 Employee.logout();
                 LoginMenu();
                 break;
