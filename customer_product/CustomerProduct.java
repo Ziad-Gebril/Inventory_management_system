@@ -14,7 +14,6 @@ public class CustomerProduct implements Record {
         this.customerSSN = customerSSN;
         this.productID = productID;
         this.purchaseDate = purchaseDate;
-        this.paid = false;
     }
 
     // ******************************** getters ********************************************** */

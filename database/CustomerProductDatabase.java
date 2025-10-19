@@ -19,8 +19,11 @@ public CustomerProductDatabase(String filename) {
     public CustomerProduct createRecordFrom(String line) {
         String[] parts = line.split(",");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        CustomerProduct cs = new CustomerProduct(parts[0], parts[1], LocalDate.parse(parts[2],formatter));
+        cs.setPaid(Boolean.valueOf(parts[3]));
         
-        return new CustomerProduct(parts[0], parts[1], LocalDate.parse(parts[2],formatter));
+        return cs;
+
     }
 
 

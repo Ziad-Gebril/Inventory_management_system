@@ -13,7 +13,7 @@ public class testCustomer {
 
         //E:\\OneDrive\\Desktop\\Programing\\Cursor\\Labs\\Lab4\\inventory\\Inventory_management_system\\customer_product\\CustomerProduct.txt
         //customer_product/CustomerProduct.txt
-        CustomerProductDatabase db = new CustomerProductDatabase("E:\\OneDrive\\Desktop\\Programing\\Cursor\\Labs\\Lab4\\inventory\\Inventory_management_system\\customer_product\\CustomerProduct.txt");
+        CustomerProductDatabase db = new CustomerProductDatabase("customer_product/CustomerProduct.txt");
         db.readFromFile();
         csproducts = db.returnAllRecords();
         
