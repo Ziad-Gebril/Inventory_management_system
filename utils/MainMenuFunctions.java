@@ -52,7 +52,6 @@ public class MainMenuFunctions {
         String ID = scan.nextLine();
         admin.removeEmployee(ID);
 
-        scan.close();
     }
 
 

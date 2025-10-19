@@ -28,9 +28,6 @@ public class MainMenu {
     
     public static void main(String[] args) {
         LoginMenu();
-        // MainMenu menu = new MainMenu();
-        // menu.LoginMenu();
-        
     }
    
     
@@ -62,15 +59,17 @@ public class MainMenu {
 
             case 3:
             clearScreen();
-            System.out.println("under construction...");
             System.exit(0);
             break;
 
+
             default :
+            clearScreen();
             System.out.println(RED + "Invalid Choice! Please try again." + RESET);
             LoginMenu();
             break;
         }
+        
     }
 
     public static void adminMenu(){
@@ -90,21 +89,24 @@ public class MainMenu {
         {
             case 1:
                 clearScreen();
-                MainMenuFunctions.AddEmployee(admin);         
+                MainMenuFunctions.AddEmployee(admin);  
+                adminMenu();       
                 //adding new employee
                 break;
             case 2:
                clearScreen();
                MainMenuFunctions.RemoveEmployee(admin);
+               adminMenu();
                break;
             case 3:
             clearScreen();
             MainMenuFunctions.ShowAllEmployees(admin);
+            adminMenu();
                 //view all employees
                 break;
             case 4:
             clearScreen();
-                System.out.println("under construction...");
+                
                 admin.logout();
                 LoginMenu();
                 break;
@@ -113,6 +115,51 @@ public class MainMenu {
             adminMenu();
             break;
         }
+       
+    }
+
+
+    public static void EmployeeMenu(){
+        System.out.println(BLUE + "================= Inventory Management System =================" + RESET);
+        System.out.println(GREEN + "1. Add New Employee" + RESET);
+        System.out.println(GREEN + "2. Remove Employee" + RESET);
+        System.out.println(GREEN + "3. View All Employees" + RESET);
+        System.out.println(GREEN + "4. Logout" + RESET);
+        System.out.println(BLUE + "===============================================================" + RESET);
+        System.out.print(YELLOW + "Please select an option (1 --> 4): " + RESET);
+
+        Scanner scan = new Scanner(System.in);
+         int choice = scan.nextInt();
+         EmployeeRoles Employee = new EmployeeRoles();
+
+        switch(choice)
+        {
+            case 1:
+                clearScreen();
+                     
+                //adding new employee
+                break;
+            case 2:
+               clearScreen();
+              
+               break;
+            case 3:
+            clearScreen();
+           
+                //view all employees
+                break;
+            case 4:
+            clearScreen();
+                System.out.println("under construction...");
+                Employee.logout();
+                LoginMenu();
+                break;
+            default :
+            System.out.println(RED + "Invalid Choice! Please try again." + RESET);
+            adminMenu();
+            break;
+        }
+       
     }
 
     public static void clearScreen() {
