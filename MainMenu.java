@@ -17,24 +17,24 @@ import employee.*;
 public class MainMenu {
 
     
-    final String RESET = "\u001B[0m";
-    final String RED = "\u001B[31m";
-    final String GREEN = "\u001B[32m";
-    final String YELLOW = "\u001B[33m";
-    final String BLUE = "\u001B[34m";
-    final String PURPLE = "\u001B[35m";
-    final String CYAN = "\u001B[36m";
-    final String WHITE = "\u001B[37m";
+    static String RESET = "\u001B[0m";
+    static String RED = "\u001B[31m";
+    static String GREEN = "\u001B[32m";
+    static String YELLOW = "\u001B[33m";
+    static String BLUE = "\u001B[34m";
+    static String PURPLE = "\u001B[35m";
+    static String CYAN = "\u001B[36m";
+    static String WHITE = "\u001B[37m";
     
     public static void main(String[] args) {
+        LoginMenu();
+        // MainMenu menu = new MainMenu();
+        // menu.LoginMenu();
         
-
-        MainMenu menu = new MainMenu();
-        menu.LoginMenu();
     }
    
     
-    public void LoginMenu() {
+    public static void LoginMenu() {
         System.out.println(BLUE + "================= Inventory Management System =================" + RESET);
         System.out.println(GREEN + "1. Admin Login" + RESET);
         System.out.println(GREEN + "2. Employee Login" + RESET);
@@ -73,7 +73,7 @@ public class MainMenu {
         }
     }
 
-    public void adminMenu(){
+    public static void adminMenu(){
         System.out.println(BLUE + "================= Inventory Management System =================" + RESET);
         System.out.println(GREEN + "1. Add New Employee" + RESET);
         System.out.println(GREEN + "2. Remove Employee" + RESET);
@@ -115,7 +115,7 @@ public class MainMenu {
         }
     }
 
-    public void clearScreen() {
+    public static void clearScreen() {
         try {
             if (System.getProperty("os.name").toLowerCase().contains("windows")) {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
