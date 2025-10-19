@@ -1,17 +1,9 @@
-import java.time.LocalDate;
-import java.time.format.*;
 import java.util.*;
-
 import Admin.AdminRole;
-import utils.Generator;
 import utils.MainMenuFunctions;
-import utils.Validator;
 import java.lang.InterruptedException;
 import java.io.IOException;
-import database.*;
-import customer_product.*;
 import employee.*;
-//import utils.*;
 
 public class MainMenu {
 
@@ -122,7 +114,7 @@ public class MainMenu {
         System.out.println(GREEN + "6. applyPayment" + RESET);
         System.out.println(GREEN + "7. Logout" + RESET);
         System.out.println(BLUE + "===============================================================" + RESET);
-        System.out.print(YELLOW + "Please select an option (1 --> 4): " + RESET);
+        System.out.print(YELLOW + "Please select an option (1 --> 7): " + RESET);
 
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
