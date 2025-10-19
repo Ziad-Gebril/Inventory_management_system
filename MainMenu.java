@@ -1,6 +1,8 @@
 import java.time.LocalDate;
 import java.time.format.*;
 import java.util.*;
+
+import Admin.AdminRole;
 import utils.Generator;
 import utils.MainMenuFunctions;
 import utils.Validator;
@@ -46,7 +48,6 @@ public class MainMenu {
             adminMenu();
             case 2:
             System.out.println("under construction...");
-            employeeMenu();
             case 3:
             System.out.println("under construction...");
             System.exit(0);
@@ -68,16 +69,16 @@ public class MainMenu {
 
         Scanner scan = new Scanner(System.in);
          int choice = scan.nextInt();
+         AdminRole adminRole = new AdminRole();
 
         switch(choice)
         {
             case 1:
-                System.out.println("under construction..."); 
-                AddEmployee();         
+                System.out.println("under construction...");
                 //adding new employee
             case 2:
                 System.out.println("under construction...");
-                //removing employee
+               MainMenuFunctions.RemoveEmployee(adminRole);
             case 3:
                 //view all employees
             case 4:
