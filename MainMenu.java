@@ -51,18 +51,17 @@ public class MainMenu {
                 break;
 
             case 3:
-            clearScreen();
-            System.exit(0);
-            break;
+                clearScreen();
+                System.exit(0);
+                break;
 
-
-            default :
-            clearScreen();
-            System.out.println(RED + "Invalid Choice! Please try again." + RESET);
-            LoginMenu();
-            break;
+            default:
+                clearScreen();
+                System.out.println(RED + "Invalid Choice! Please try again." + RESET);
+                LoginMenu();
+                break;
         }
-        
+
     }
 
     public static void adminMenu() {
@@ -82,33 +81,33 @@ public class MainMenu {
         switch (choice) {
             case 1:
                 clearScreen();
-                MainMenuFunctions.AddEmployee(admin);  
-                adminMenu();       
-                //adding new employee
+                MainMenuFunctions.AddEmployee(admin);
+                adminMenu();
+                // adding new employee
                 break;
             case 2:
-               clearScreen();
-               MainMenuFunctions.RemoveEmployee(admin);
-               adminMenu();
-               break;
+                clearScreen();
+                MainMenuFunctions.RemoveEmployee(admin);
+                adminMenu();
+                break;
             case 3:
-            clearScreen();
-            MainMenuFunctions.ShowAllEmployees(admin);
-            adminMenu();
-                //view all employees
+                clearScreen();
+                MainMenuFunctions.ShowAllEmployees(admin);
+                adminMenu();
+                // view all employees
                 break;
             case 4:
-            clearScreen();
-                
+                clearScreen();
+
                 admin.logout();
                 LoginMenu();
                 break;
-            default :
-            System.out.println(RED + "Invalid Choice! Please try again." + RESET);
-            adminMenu();
-            break;
+            default:
+                System.out.println(RED + "Invalid Choice! Please try again." + RESET);
+                adminMenu();
+                break;
         }
-       
+
     }
 
 
@@ -127,24 +126,21 @@ public class MainMenu {
         System.out.print(YELLOW + "Please select an option (1 --> 4): " + RESET);
 
         Scanner scan = new Scanner(System.in);
-         int choice = scan.nextInt();
-         EmployeeRoles Employee = new EmployeeRoles();
+        int choice = scan.nextInt();
+        EmployeeRoles Employee = new EmployeeRoles();
 
-        switch(choice)
-        {
+        switch (choice) {
             case 1:
                 clearScreen();
-                     
-                
+
                 break;
             case 2:
-               clearScreen();
-              
-               break;
+                clearScreen();
+
+                break;
             case 3:
-            clearScreen();
-           
-                
+                clearScreen();
+
                 break;
             case 4:
             clearScreen();
@@ -152,9 +148,7 @@ public class MainMenu {
                 break;
 
             case 5:
-            clearScreen();
-            MainMenuFunctions.returnProduct(employee);
-            EmployeeMenu();
+
             break;
 
 
@@ -170,12 +164,12 @@ public class MainMenu {
                 LoginMenu();
                 break;
 
-            default :
-            System.out.println(RED + "Invalid Choice! Please try again." + RESET);
-            adminMenu();
-            break;
+            default:
+                System.out.println(RED + "Invalid Choice! Please try again." + RESET);
+                adminMenu();
+                break;
         }
-       
+
     }
 
     public static void clearScreen() {
