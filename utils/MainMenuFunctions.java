@@ -45,6 +45,7 @@ public class MainMenuFunctions {
         {
         System.out.println(RED + "Error The name must be String........");
         flag = false;
+        scan.nextLine();
         return;
         }
         
@@ -55,8 +56,9 @@ public class MainMenuFunctions {
         String email = scan.nextLine();
         if(!Validator.isValidEmail(email))
         {
-        System.out.println(RED + "Error The name must be String........");
+        System.out.println(RED + "Error, Enter Valid Email........");
         flag = false;
+        scan.nextLine();
         return;
         }
         
@@ -67,8 +69,9 @@ public class MainMenuFunctions {
         String Phone = scan.nextLine();
         if(!Validator.isValidPhoneNumber(Phone))
         {
-        System.out.println(RED + "Error The name must be String........");
+        System.out.println(RED + "Error The Phone Number must be 11 numbers........");
         flag = false;
+        scan.nextLine();
         return;
         }
         
@@ -76,6 +79,8 @@ public class MainMenuFunctions {
 
         if(flag){
         admin.addEmployee(ID , Name, email, address,Phone );
+        System.out.println( GREEN + "Employee was Added successfully...............");
+        scan.nextLine();
         }
     } 
 
