@@ -1,11 +1,9 @@
 package employee;
 
-import customer_product.CustomerProduct;
-import product.Product;
 import java.time.LocalDate;
-import employee.EmployeeRoles;
+
 import java.time.format.*;
-import customer_product.*;
+
 
 public class EmployeeRoleTest {
     public static void main(String[] args) {

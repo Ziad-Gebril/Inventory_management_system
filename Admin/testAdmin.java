@@ -1,9 +1,5 @@
 package Admin;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import employee.EmployeeUser;
 
 public class testAdmin {

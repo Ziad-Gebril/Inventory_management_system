@@ -25,9 +25,6 @@ public class Product implements Record {
     public int getQuantity() {
         return quantity;
     }
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
     
     public float getPrice() {
         return price;
