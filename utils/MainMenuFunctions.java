@@ -66,12 +66,31 @@ public class MainMenuFunctions {
        }
         
     }
-    
+
     public static void getListOfPurchasingOperations(EmployeeRoles employeeRole){
         CustomerProduct [] list = employeeRole.getListOfPurchasingOperations();
         for(int i = 0; i < list.length; i++){
             System.out.println(list[i].lineRepresentation());
         }
+    }
+
+    public static void purchaseProduct(EmployeeRoles employeeRole){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter CustomerSSN: ");
+        String SSN = scanner.nextLine();
+        System.out.print("Enter Product ID: ");
+        String productID = scanner.nextLine();
+        System.out.print("Enter Purchase Date in formate of dd-mm-yyyy: ");
+        String purchaseDate = scanner.nextLine();
+        LocalDate date = getLocalDateFormated(purchaseDate);
+        boolean isPurchase = employeeRole.purchaseProduct(SSN, productID, date);
+        if(!isPurchase){
+            System.out.println("Invalid Purchasing Operation!");
+        }
+        else{
+            System.out.println("Purchasing Successfully!");
+        }
+
     }
 
 
