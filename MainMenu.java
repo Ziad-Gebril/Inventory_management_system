@@ -131,12 +131,12 @@ public class MainMenu {
         switch (choice) {
             case 1:
                 clearScreen();
-
+                MainMenuFunctions.addProduct(employee);
                 EmployeeMenu();
                 break;
             case 2:
                 clearScreen();
-
+                MainMenuFunctions.getListOfProducts(employee);
                 EmployeeMenu();
                 break;
 

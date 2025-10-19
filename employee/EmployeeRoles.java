@@ -38,7 +38,7 @@ public class EmployeeRoles {
      {
         if (!productsDb.contains(id)) {
             Scanner scan = new Scanner(System.in);
-            System.out.println("Enter the price of the Prouct: ");
+            System.out.print("Enter the price of the Prouct: ");
             Float price = scan.nextFloat();
 
             productsDb.insertRecord(new Product(id, name, maker, supplier, qty, price));
