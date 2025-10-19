@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EmployeeRoles {
+
     final String RESET = "\u001B[0m";
     final String RED = "\u001B[31m";
     final String GREEN = "\u001B[32m";
@@ -38,9 +39,8 @@ public class EmployeeRoles {
      {
         if (!productsDb.contains(id)) {
             Scanner scan = new Scanner(System.in);
-            System.out.print("Enter the price of the Prouct: ");
-            Float price = scan.nextFloat();
-
+            System.out.print("insert the product's price: ");
+            float price = scan.nextFloat();
             productsDb.insertRecord(new Product(id, name, maker, supplier, qty, price));
             System.out.println(GREEN + "The Product has been ADDED Successfully......" + RESET);
             productsDb.saveToFile();

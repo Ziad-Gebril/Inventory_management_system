@@ -7,5 +7,5 @@ P7,Tablet,Samsung,TechSupplier,5,1000.0
 P7,Tablet,Samsung,TechSupplier,5,1000.0
 P7,Tablet,Samsung,TechSupplier,5,1000.0
 P7,Tablet,Samsung,TechSupplier,5,1000.0
-P111,iPhone,Apple,TechSupplier,103,1100.0
-P2798,Computer,IBM,ElAraby,1000,1300.0
+P111,iPhone,Apple,TechSupplier,106,1100.0
+P141,iPhone14,Apple,TechSupplier,100,1400.0
