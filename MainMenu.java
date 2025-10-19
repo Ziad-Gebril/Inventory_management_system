@@ -26,6 +26,12 @@ public class MainMenu {
     final String CYAN = "\u001B[36m";
     final String WHITE = "\u001B[37m";
     
+    public static void main(String[] args) {
+        
+
+        MainMenu menu = new MainMenu();
+        menu.LoginMenu();
+    }
    
     
     public void LoginMenu() {
@@ -47,15 +53,23 @@ public class MainMenu {
             clearScreen();
              
             adminMenu();
+            break;
+
             case 2:
+            clearScreen();
             System.out.println("under construction...");
+            break;
+
             case 3:
+            clearScreen();
             System.out.println("under construction...");
             System.exit(0);
+            break;
 
             default :
             System.out.println(RED + "Invalid Choice! Please try again." + RESET);
             LoginMenu();
+            break;
         }
     }
 
@@ -78,20 +92,26 @@ public class MainMenu {
                 clearScreen();
                 MainMenuFunctions.AddEmployee(admin);         
                 //adding new employee
+                break;
             case 2:
-                System.out.println("under construction...");
+               clearScreen();
                MainMenuFunctions.RemoveEmployee(admin);
+               break;
             case 3:
             clearScreen();
             MainMenuFunctions.ShowAllEmployees(admin);
                 //view all employees
+                break;
             case 4:
+            clearScreen();
                 System.out.println("under construction...");
                 admin.logout();
                 LoginMenu();
+                break;
             default :
             System.out.println(RED + "Invalid Choice! Please try again." + RESET);
             adminMenu();
+            break;
         }
     }
 

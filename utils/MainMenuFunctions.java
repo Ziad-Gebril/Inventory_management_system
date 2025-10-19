@@ -43,6 +43,7 @@ public class MainMenuFunctions {
 
         admin.addEmployee(ID , Name, email, address,Phone );
     }
+
     public static void RemoveEmployee(AdminRole admin)
     {
         Scanner scan = new Scanner(System.in);
@@ -50,6 +51,8 @@ public class MainMenuFunctions {
         System.out.print("\nEnter the Employee's ID: ");
         String ID = scan.nextLine();
         admin.removeEmployee(ID);
+
+        scan.close();
     }
 
 
@@ -63,10 +66,6 @@ public class MainMenuFunctions {
        }
         
     }
-
-    
-
-
 
 
 

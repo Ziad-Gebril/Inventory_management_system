@@ -24,6 +24,8 @@ public class AdminRole {
         if (!database.contains(employeeId)) {
             EmployeeUser emp = new EmployeeUser(employeeId, name, email, address, phoneNumber);
             database.insertRecord(emp);
+            database.saveToFile();
+            
         }
     }
 
@@ -36,6 +38,7 @@ public class AdminRole {
         if (database.contains(key)) {
             database.deleteRecord(key);
             System.out.println(GREEN + "Employee with ID: " + key +" Was Deleted Successfully..."+ RESET);
+            database.saveToFile();
         }
         else
         {
