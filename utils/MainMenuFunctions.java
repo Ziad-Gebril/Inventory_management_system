@@ -8,6 +8,8 @@ import database.*;
 import customer_product.*;
 import employee.*;
 import Admin.AdminRole;
+import utils.Validator;
+import utils.Generator;
 
 import static utils.Generator.generateEmployeeRandomId;
 import static utils.Validator.isValidEmail;
@@ -22,21 +24,21 @@ public class MainMenuFunctions {
     {
         Scanner scan = new Scanner(System.in);
         
-        String ID = generateEmployeeRandomId();
+        String ID = Generator.generateEmployeeRandomId();
 
         System.out.print("Enter the Employee's Name: ");
         String Name = scan.nextLine();
 
         System.out.print("Enter the Employee's Email: ");
         String email = scan.nextLine();
-        isValidEmail(email);
+        Validator.isValidEmail(email);
 
         System.out.print("Enter the Employee's address: ");
         String address = scan.nextLine();
        
         System.out.print("Enter the Employee's Phone Number: ");
         String Phone = scan.nextLine();
-        isValidPhoneNumber(Phone);
+        Validator.isValidPhoneNumber(Phone);
 
         admin.addEmployee(ID , Name, email, address,Phone );
     }
