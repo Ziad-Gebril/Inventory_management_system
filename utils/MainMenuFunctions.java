@@ -4,20 +4,12 @@ import java.time.format.*;
 import java.util.*;
 import java.lang.InterruptedException;
 import java.io.IOException;
-import database.*;
 import customer_product.*;
 import employee.*;
 import product.Product;
 import Admin.AdminRole;
-import utils.Validator;
-import utils.Generator;
-import java.util.ArrayList;
-
 import static utils.Generator.generateCustomerRandomId;
-import static utils.Generator.generateEmployeeRandomId;
 import static utils.Validator.isInteger;
-import static utils.Validator.isValidEmail;
-import static utils.Validator.isValidPhoneNumber;
 
 public class MainMenuFunctions {
 
@@ -259,10 +251,6 @@ public class MainMenuFunctions {
         Emp.applyPayment(SSN, requestDate);
         System.out.println("Press Any key to Continue...........");
         scan.nextLine();
-
-
-
-
     }
 
 
