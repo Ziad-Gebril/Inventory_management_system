@@ -45,7 +45,9 @@ public class MainMenuFunctions {
         {
         System.out.println(RED + "Error The name must be String........");
         flag = false;
+        return;
         }
+        
 
 
 
@@ -55,6 +57,7 @@ public class MainMenuFunctions {
         {
         System.out.println(RED + "Error The name must be String........");
         flag = false;
+        return;
         }
         
         System.out.print("Enter the Employee's address: ");
@@ -66,6 +69,7 @@ public class MainMenuFunctions {
         {
         System.out.println(RED + "Error The name must be String........");
         flag = false;
+        return;
         }
         
 
