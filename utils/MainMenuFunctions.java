@@ -96,6 +96,12 @@ public class MainMenuFunctions {
         
     }
 
+    
+
+
+    //Employee Functions
+
+
     public static void getListOfPurchasingOperations(EmployeeRoles employeeRole){
         CustomerProduct [] list = employeeRole.getListOfPurchasingOperations();
         for(int i = 0; i < list.length; i++){
@@ -116,8 +122,7 @@ public class MainMenuFunctions {
     }
 
 
-    //Employee Functions
-
+    
     public static void returnProduct(EmployeeRoles Emp)
     {
 

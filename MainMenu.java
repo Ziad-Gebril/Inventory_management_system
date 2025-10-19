@@ -127,7 +127,6 @@ public class MainMenu {
 
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
-        EmployeeRoles Employee = new EmployeeRoles();
 
         switch (choice) {
             case 1:
@@ -138,16 +137,22 @@ public class MainMenu {
                 clearScreen();
 
                 break;
+
+                
             case 3:
                 clearScreen();
-
+                MainMenuFunctions.getListOfPurchasingOperations(employee)
                 break;
+
+
             case 4:
             clearScreen();
-               
-                break;
+            MainMenuFunctions.purchaseProduct(employee);  
+            break;
 
             case 5:
+            clearScreen();
+            MainMenuFunctions.returnProduct(employee);
 
             break;
 
