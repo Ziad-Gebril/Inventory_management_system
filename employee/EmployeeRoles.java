@@ -8,8 +8,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class EmployeeRoles {
+
     final String RESET = "\u001B[0m";
     final String RED = "\u001B[31m";
     final String GREEN = "\u001B[32m";
@@ -36,7 +38,10 @@ public class EmployeeRoles {
     public void addProduct(String id, String name, String maker, String supplier, int qty) //NO PRICE IS SET , it set to ZERO
      {
         if (!productsDb.contains(id)) {
-            productsDb.insertRecord(new Product(id, name, maker, supplier, qty, 0.0f));
+            Scanner scan = new Scanner(System.in);
+            System.out.print("insert the product's price: ");
+            float price = scan.nextFloat();
+            productsDb.insertRecord(new Product(id, name, maker, supplier, qty, price));
             System.out.println(GREEN + "The Product has been ADDED Successfully......" + RESET);
             productsDb.saveToFile();
         }

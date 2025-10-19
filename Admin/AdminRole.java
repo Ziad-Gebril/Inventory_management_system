@@ -16,7 +16,7 @@ class AdminRole {
     public AdminRole() {
 
         //E:\\OneDrive\\Desktop\\Programing\\Cursor\\Labs\\Lab4\\inventory\\Inventory_management_system\\employee\\employees.txt
-        this.database = new EmployeeUserDatabase("E:\\OneDrive\\Desktop\\Programing\\Cursor\\Labs\\Lab4\\inventory\\Inventory_management_system\\employee\\employees.txt");
+        this.database = new EmployeeUserDatabase("employee/employees.txt");
         this.database.readFromFile();
     }
 
